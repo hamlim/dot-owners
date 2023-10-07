@@ -1,13 +1,11 @@
 import k from 'kleur'
 
-
-let print = console.log;
-
 let branding = k.green().italic(` [dot-owners] `)
 
-export default function cli() {
-  let cmd = process.argv[2];
-
+export default async function cli({
+  cmd = process.argv[2],
+  print = console.log
+} = {}) {
   switch (cmd) {
     case 'help': {
       print(`${branding} 👋 Welcome to the .owners CLI`)
