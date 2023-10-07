@@ -3,8 +3,8 @@ package cmd
 import (
 	"fmt"
 
+	"github.com/hamlim/dot-owners/cli/utils"
 	"github.com/spf13/cobra"
-	"os/exec"
 )
 
 // checkCmd represents the check command
@@ -18,17 +18,14 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		op := exec.Command("git", "diff", "--name-only")
 
-		// Run the command and collect its output
-		output, err := op.Output()
-		if err != nil {
-			fmt.Printf("Command execution failed: %s", err)
-			return
-		}
+		changedFiles := utils.Diff()
 
-		// Print the output
-		fmt.Println(string(output))
+		fmt.Println(len(changedFiles))
+		fmt.Println(changedFiles)
+
+		owners := utils.ResolveOwners()
+		fmt.Println(owners)
 	},
 }
 
