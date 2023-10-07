@@ -1,33 +1,33 @@
 import k from 'kleur'
 
-interface Args {
-  help?: boolean
-}
 
-let branding = k.bgGreen().white().italic(` [dot-owners] `)
+let print = console.log;
+
+let branding = k.green().italic(` [dot-owners] `)
 
 export default function cli() {
-  let args = process.argv.slice(2).reduce((acc, arg) => {
-    let argName = arg.replace(/--/, '')
-    if (argName.includes('=')) {
-      let [key, val] = argName.split('=')
-      return {
-        ...acc,
-        [key]: val,
-      }
+  let cmd = process.argv[2];
+
+  switch (cmd) {
+    case 'help': {
+      print(`${branding} 👋 Welcome to the .owners CLI`)
+      print(`${branding} Usage:\n`)
+
+      return;
     }
-    return {
-      ...acc,
-      [argName]: true,
+    case 'check': {
+
+
+      return;
     }
-  }, {})
+    case 'validate': {
 
-  let { help } = args as Args
 
-  if (help) {
-    console.log(`${branding} 👋 Welcome to the .owners CLI`)
-    console.log(`${branding} Usage:\n`)
-
-    return
+      return;
+    }
+    default: {
+      print(k.italic(`No command provided to dot-owners cli. Run \`dot-owners help\` to print available commands!`))
+      return;
+    }
   }
 }
