@@ -2,7 +2,7 @@
 
 exports[`it works 1`] = `
 [
-  "[32m[3m [dot-owners] [39m[23m 👋 Welcome to the .owners CLI",
+  "[32m[3m [dot-owners] [39m[23m 👋 Welcome to the dot-owners CLI",
   
 "[32m[3m [dot-owners] [39m[23m Usage:
 "

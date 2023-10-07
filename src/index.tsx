@@ -8,7 +8,7 @@ export default async function cli({
 } = {}) {
   switch (cmd) {
     case 'help': {
-      print(`${branding} 👋 Welcome to the .owners CLI`)
+      print(`${branding} 👋 Welcome to the dot-owners CLI`)
       print(`${branding} Usage:\n`)
 
       return;
