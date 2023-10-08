@@ -2,30 +2,22 @@
   "name": "dot-owners",
   "version": "0.0.0",
   "main": "dist/index.js",
-  "source": "src/index.tsx",
-  "types": "dist/index.d.ts",
+  "source": "src/index.ts",
   "repository": "git@github.com:hamlim/dot-owners.git",
   "author": "Matt Hamlin <matthewjameshamlin@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "swc ./src -d ./dist --ignore ./__tests__/**/*",
+    "build": "bun build ./src/index.ts --compile --minify --outfile ./bin/index",
     "prepub": "bun run build",
     "pub": "npm publish --access public",
     "tsc": "tsc --noEmit"
   },
   "devDependencies": {
-    "@happy-dom/global-registrator": "^12.1.6",
-    "@swc/cli": "0.1.62",
-    "@swc/core": "1.3.88",
-    "@swc/jest": "0.2.29",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-is": "^18.2.0",
-    "turbo": "^1.9.3",
-    "typescript": "^5.0.4"
+    "typescript": "latest",
+    "bun-types": "latest"
   },
   "bin": {
-    "dot-owners": "./bin/index.js"
+    "dot-owners": "./bin/index"
   },
   "publishConfig": {
     "access": "public",
