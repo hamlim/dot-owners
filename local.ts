@@ -1,3 +1,3 @@
-import cli from "./src/index";
+import cli from "./src/cli";
 
 cli();
