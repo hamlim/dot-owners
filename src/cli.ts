@@ -1,4 +1,6 @@
 import k from "kleur";
+import check from "./check";
+import { resolveConfig } from "./config";
 
 let branding = k.green().italic(` [dot-owners] `);
 
@@ -45,6 +47,10 @@ export default async function cli({
         );
         return;
       }
+
+      const config = await resolveConfig();
+
+      await check({ print, flags, config });
       return;
     }
     case "validate": {
