@@ -1,4 +1,4 @@
-import { test, expect } from "bun:test";
+import { expect, test } from "bun:test";
 import { getFlags } from "../cli";
 
 test("getFlags - empty for no args", () => {
