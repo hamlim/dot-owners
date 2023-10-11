@@ -10,7 +10,8 @@
     "build": "bun build ./src/entrypoint.ts --compile --minify --outfile ./bin/index",
     "prepub": "bun run build",
     "pub": "npm publish --access public",
-    "tsc": "tsc --noEmit"
+    "tsc": "tsc --noEmit",
+    "format": "dprint fmt"
   },
   "devDependencies": {
     "bun-types": "latest",

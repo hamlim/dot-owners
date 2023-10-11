@@ -1,0 +1,7 @@
+{
+  "editor.defaultFormatter": "dprint.dprint",
+  "go.formatTool": "gofmt",
+  "[markdown]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  }
+}

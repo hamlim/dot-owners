@@ -5,7 +5,7 @@ import { resolveConfig } from "./config";
 let branding = k.green().italic(` [dot-owners] `);
 
 export function getFlags(
-  flagsInit: Array<string>
+  flagsInit: Array<string>,
 ): Record<string, string | boolean> {
   let flags = flagsInit.reduce((acc, flagInit) => {
     let flag = flagInit.replace("--", "");
@@ -41,9 +41,11 @@ export default async function cli({
     case "check": {
       if (flags.help) {
         print(
-          `${k.italic(
-            `\`dot-owners check\``
-          )} determines the owners associated with the current diff.`
+          `${
+            k.italic(
+              `\`dot-owners check\``,
+            )
+          } determines the owners associated with the current diff.`,
         );
         return;
       }
@@ -56,9 +58,11 @@ export default async function cli({
     case "validate": {
       if (flags.help) {
         print(
-          `${k.italic(
-            `\`dot-owners validate\``
-          )} validates the \`.owners\` files within the workspace, and checks that the teams listed within those .owners files are still active.`
+          `${
+            k.italic(
+              `\`dot-owners validate\``,
+            )
+          } validates the \`.owners\` files within the workspace, and checks that the teams listed within those .owners files are still active.`,
         );
         return;
       }
@@ -67,8 +71,8 @@ export default async function cli({
     default: {
       print(
         k.italic(
-          `No command provided to dot-owners cli. Run \`dot-owners help\` to print available commands!`
-        )
+          `No command provided to dot-owners cli. Run \`dot-owners help\` to print available commands!`,
+        ),
       );
       return;
     }

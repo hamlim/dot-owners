@@ -1,7 +1,9 @@
 {
   "typescript": {},
   "json": {},
-  "markdown": {},
+  "markdown": {
+    "textWrap": "always"
+  },
   "toml": {},
   "excludes": ["**/node_modules", "**/*-lock.json"],
   "plugins": [
