@@ -24,3 +24,10 @@ bun ./local.ts check --help
 
 Tests can be run via `bun test`, generally unit tests work well but integration
 tests would be great also!
+
+## Workflow:
+
+At the moment, I do most of my development right from main using stacked
+diffs/PRs via [git-pile](https://github.com/keith/git-pile). I recommend other
+contributors give it a go - but it shouldn't really impact most folks I think
+(so feel free to fork and open PRs however you want!)
